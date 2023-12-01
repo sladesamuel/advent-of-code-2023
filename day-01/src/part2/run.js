@@ -1,3 +1,15 @@
+const replaceWordsWithNumbers = (input) =>
+  input
+    .replace("one", "1")
+    .replace("two", "2")
+    .replace("three", "3")
+    .replace("four", "4")
+    .replace("five", "5")
+    .replace("six", "6")
+    .replace("seven", "7")
+    .replace("eight", "8")
+    .replace("nine", "9")
+
 const processLine = (line) => {
   const [, firstNumber] = line.match(/^[a-z]*(\d)?/)
   const [, lastNumber] = line.match(/(\d)?[a-z]*$/)
@@ -11,10 +23,12 @@ const processLine = (line) => {
 }
 
 module.exports = (input) => {
-  const lines = input.match(/[^\r\n]+/g) ?? []
+  const sanitised = replaceWordsWithNumbers(input)
+  const lines = sanitised.match(/[^\r\n]+/g) ?? []
   const values = lines
-    .filter(value => !!value)
-    .map(line => processLine(line.trim()))
+    .map(line => line.trim())
+    .filter(value => !!value && value !== "")
+    .map(processLine)
 
   return values.reduce((a, b) => a + b, 0)
 }

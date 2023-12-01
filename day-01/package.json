@@ -8,7 +8,7 @@
     "part1:full": "node src/index.js part1 data/full-input.txt",
     "part2:basic": "node src/index.js part2 data/part2-basic-input.txt",
     "part2:full": "node src/index.js part2 data/full-input.txt",
-    "test": "jest --silent"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^29.7.0"

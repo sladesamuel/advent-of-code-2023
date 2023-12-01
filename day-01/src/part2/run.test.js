@@ -21,6 +21,8 @@ describe("run()", () => {
     ["3four", 34],
     ["abcthreebvcdfour4dd", 34]
   ])("should return the expected result given the input", (input, expectedResult) => {
+    console.log("Input is", input)
+
     const actualResult = run(input)
 
     expect(actualResult).toEqual(expectedResult)
