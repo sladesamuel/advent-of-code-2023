@@ -1,1 +1,1 @@
-module.exports = (content) => console.log("TODO")
+module.exports = (input) => 0
