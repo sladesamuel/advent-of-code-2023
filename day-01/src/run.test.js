@@ -16,7 +16,7 @@ describe("run()", () => {
   it("should return 11 when the input is 1", () => {
     const result = run("1")
 
-    expect(result).toEqual(1)
+    expect(result).toEqual(11)
   })
 
   it("should return 11 when the input is a1a", () => {
@@ -35,5 +35,18 @@ describe("run()", () => {
     const result = run("3bvcd4dd")
 
     expect(result).toEqual(34)
+  })
+
+  it("should return 136 when the input is multiline", () => {
+    const result = run(`
+    3
+    abc
+    ad5csac
+    m1dd8klj
+    3nh0
+
+    `)
+
+    expect(result).toEqual(136)
   })
 })
