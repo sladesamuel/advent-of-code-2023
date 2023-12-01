@@ -1,0 +1,16 @@
+{
+  "name": "day-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "part1:basic": "node src/index.js part1 data/part1-basic-input.txt",
+    "part1:full": "node src/index.js part1 data/full-input.txt",
+    "part2:basic": "node src/index.js part2 data/part2-basic-input.txt",
+    "part2:full": "node src/index.js part2 data/full-input.txt",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
