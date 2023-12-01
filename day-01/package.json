@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js data/basic-input.txt",
+    "basic": "node src/index.js data/basic-input.txt",
+    "full": "node src/index.js data/full-input.txt",
     "test": "jest"
   },
   "devDependencies": {
