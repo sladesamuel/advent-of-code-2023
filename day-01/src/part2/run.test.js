@@ -1,47 +1,36 @@
 const run = require("./run")
 
 describe("run()", () => {
-  it("should return 0 when the input is empty", () => {
-    const result = run("")
+  it.each([
+    ["", 0],
+    ["abc", 0],
+    ["1", 11],
+    ["a1a", 11],
+    ["a1b1a", 11],
+    ["3bvcd4dd", 34],
+    ["one", 11],
+    ["two", 22],
+    ["three", 33],
+    ["four", 44],
+    ["five", 55],
+    ["six", 66],
+    ["seven", 77],
+    ["eight", 88],
+    ["nine", 99],
+    ["threefour", 34],
+    ["3four", 34],
+    ["abcthreebvcdfour4dd", 34]
+  ])("should return the expected result given the input", (input, expectedResult) => {
+    const actualResult = run(input)
 
-    expect(result).toEqual(0)
-  })
-
-  it("should return 0 when the input only contains letters", () => {
-    const result = run("abc")
-
-    expect(result).toEqual(0)
-  })
-
-  it("should return 11 when the input is 1", () => {
-    const result = run("1")
-
-    expect(result).toEqual(11)
-  })
-
-  it("should return 11 when the input is a1a", () => {
-    const result = run("a1a")
-
-    expect(result).toEqual(11)
-  })
-
-  it("should return 11 when the input is a1b1a", () => {
-    const result = run("a1b1a")
-
-    expect(result).toEqual(11)
-  })
-
-  it("should return 34 when the input is 3bvcd4dd", () => {
-    const result = run("3bvcd4dd")
-
-    expect(result).toEqual(34)
+    expect(actualResult).toEqual(expectedResult)
   })
 
   it("should return 136 when the input is multiline", () => {
     const result = run(`
     3
     abc
-    ad5csac
+    adfivecsac
     m1dd8klj
     3nh0
 
