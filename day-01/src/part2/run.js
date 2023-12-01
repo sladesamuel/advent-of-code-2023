@@ -1,20 +1,17 @@
-const replaceWordsWithNumbers = (input) =>
-  input
-    .replace("one", "1")
-    .replace("two", "2")
-    .replace("three", "3")
-    .replace("four", "4")
-    .replace("five", "5")
-    .replace("six", "6")
-    .replace("seven", "7")
-    .replace("eight", "8")
-    .replace("nine", "9")
-
 const processLine = (line) => {
-  const [, firstNumber] = line.match(/^[a-z]*(\d)?/)
-  const [, lastNumber] = line.match(/(\d)?[a-z]*$/)
+  const [, firstNumber] = line.match(/(\d|one|two|three|four|five|six|seven|eight|nine)/) ?? [null, null]
+  const [, lastNumber] = line.match(/.*(\d|one|two|three|four|five|six|seven|eight|nine)(?!.*(\d|one|two|three|four|five|six|seven|eight|nine))/) ?? [null, null]
 
   const value = `${firstNumber}${lastNumber}`
+    .replaceAll("one", "1")
+    .replaceAll("two", "2")
+    .replaceAll("three", "3")
+    .replaceAll("four", "4")
+    .replaceAll("five", "5")
+    .replaceAll("six", "6")
+    .replaceAll("seven", "7")
+    .replaceAll("eight", "8")
+    .replaceAll("nine", "9")
 
   console.log(`Converted "${line}" into ${value}`)
   const result = parseInt(value)
@@ -23,8 +20,7 @@ const processLine = (line) => {
 }
 
 module.exports = (input) => {
-  const sanitised = replaceWordsWithNumbers(input)
-  const lines = sanitised.match(/[^\r\n]+/g) ?? []
+  const lines = input.match(/[^\r\n]+/g) ?? []
   const values = lines
     .map(line => line.trim())
     .filter(value => !!value && value !== "")
