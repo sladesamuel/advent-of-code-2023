@@ -42,7 +42,7 @@ const parseSet = (setString: string): CubeSet => {
   const cubeStrings = setString.split(",")
   const cubes = cubeStrings.map(cube => parseCube(cube.trim()))
 
-  cubes.forEach(cube => set[cube.type] += cube.value)
+  cubes.forEach(cube => set[cube.type] = cube.value)
 
   return set
 }

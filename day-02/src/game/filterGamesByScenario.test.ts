@@ -1,6 +1,6 @@
 import CubeSet from "./CubeSet"
 import Game from "./Game"
-import filterGamesByScenario from "./filterGamesByScenario"
+import filterGamesByScenario, { Scenario } from "./filterGamesByScenario"
 
 const createCubeSet = (red: number, blue: number, green: number): CubeSet => ({
   blue, green, red
@@ -69,5 +69,32 @@ describe("filterGamesByScenario()", () => {
     expect(resultingGames[0].id).toEqual(1)
     expect(resultingGames[1].id).toEqual(2)
     expect(resultingGames[2].id).toEqual(5)
+  })
+
+  it("should not filter the given input", () => {
+    const games: Game[] = [
+      {
+        id: 97,
+        sets: [
+          createCubeSet(0, 1, 2),
+          createCubeSet(9, 0, 0),
+          createCubeSet(8, 4, 0),
+          createCubeSet(1, 14, 4),
+          createCubeSet(0, 9, 2),
+          createCubeSet(1, 6, 2)
+        ]
+      }
+    ]
+
+    const scenario: Scenario = {
+      red: 12,
+      blue: 14,
+      green: 13
+    }
+
+    const resultingGames = filterGamesByScenario(games, scenario)
+
+    expect(resultingGames).toHaveLength(1)
+    expect(resultingGames[0].id).toEqual(97)
   })
 })
