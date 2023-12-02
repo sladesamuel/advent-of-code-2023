@@ -1,9 +1,12 @@
 import { readFileSync } from "fs"
-import run from "./game/run"
+import run from "./game/runPart1"
 
-const [, , inputFilePath] = process.argv
+const [, , part, inputFilePath] = process.argv
 
 const input = readFileSync(inputFilePath).toString()
-const result = run(input)
 
-console.log(`The result is: ${result}`)
+if (part === "part1") {
+  const result = run(input)
+
+  console.log(`The result for Part 1 is: ${result}`)
+}
