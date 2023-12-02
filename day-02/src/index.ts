@@ -1,4 +1,9 @@
-import Game from "./game/Game"
+import { readFileSync } from "fs"
+import run from "./game/run"
 
-const game: Game = { id: 1, sets: [] }
-console.log(game)
+const [, , inputFilePath] = process.argv
+
+const input = readFileSync(inputFilePath).toString()
+const result = run(input)
+
+console.log(`The result is: ${result}`)

@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && node dist/index.js",
+    "run:sample": "yarn build && node dist/index.js data/sample-input.txt",
     "test": "jest"
   },
   "devDependencies": {
