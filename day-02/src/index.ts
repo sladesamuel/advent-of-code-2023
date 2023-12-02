@@ -1,4 +1,4 @@
-import { Game } from "./game"
+import Game from "./game/Game"
 
-const game: Game = { id: 1 }
+const game: Game = { id: 1, sets: [] }
 console.log(game)
