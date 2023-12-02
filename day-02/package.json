@@ -7,6 +7,8 @@
     "build": "tsc",
     "run:part1:sample": "yarn build && node dist/index.js part1 data/sample-input.txt",
     "run:part1:full": "yarn build && node dist/index.js part1 data/full-input.txt",
+    "run:part2:sample": "yarn build && node dist/index.js part2 data/sample-input.txt",
+    "run:part2:full": "yarn build && node dist/index.js part2 data/full-input.txt",
     "test": "jest"
   },
   "devDependencies": {
