@@ -1,5 +1,5 @@
 import Game from "./Game";
 
-export default (games: Game[]): number => {
-  return 0
-}
+export default (games: Game[]): number =>
+  games.map(game => game.id)
+    .reduce((a, b) => a + b, 0)
