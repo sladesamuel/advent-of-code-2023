@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "run:part1:dummy": "yarn build && node dist/index.js data/dummy-input.txt",
+    "run:part1:full": "yarn build && node dist/index.js data/full-input.txt",
     "test": "jest"
   },
   "devDependencies": {
