@@ -38,7 +38,6 @@ const checkForSymbolAllAround = (grid: Grid, row: number, column: number): boole
 }
 
 export default ({ columns, row }: Part, grid: Grid): boolean => {
-
   const matches = columns.filter(column => checkForSymbolAllAround(grid, row, column))
 
   return matches.length > 0
