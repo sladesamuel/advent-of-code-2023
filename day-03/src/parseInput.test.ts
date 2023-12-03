@@ -1,4 +1,4 @@
-import Grid, { Cell } from "./Grid"
+import { Cell } from "./Grid"
 import parseInput from "./parseInput"
 
 const input = `467..114..
