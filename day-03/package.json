@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "run:part1:dummy": "yarn build && node dist/index.js data/dummy-input.txt",
     "test": "jest"
   },
   "devDependencies": {
